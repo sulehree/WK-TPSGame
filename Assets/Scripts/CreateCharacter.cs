@@ -21,9 +21,12 @@ public class CreateCharacter : MonoBehaviour
     public void SeleectCharacter() {
 
         int index = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        
         TurnOffCharacters();
+        
         characters[index].SetActive(true);
         characters[index].transform.position = characterPosition.transform.position;
+        GameManager.instance.selectedCharacter = index;
     }
 
     private void TurnOffCharacters()

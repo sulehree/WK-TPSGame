@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject buttonPanel, characterSelectPanel, characterCreatePanel ;
+    public GameObject buttonPanel, characterSelectPanel, characterCreatePanel,aboutPanel ;
     private MainMenuCamera mainMenuCamera;
     // Start is called before the first frame update
     private void Awake()
@@ -21,6 +21,13 @@ public class MenuController : MonoBehaviour
     {
         
     }
+        public void StartGame()
+    {
+        SceneLoader.instance.LoadLevel("LevelSelect");
+    }
+        
+
+
 
      public void PlayGame()
     {
@@ -39,6 +46,7 @@ public class MenuController : MonoBehaviour
         mainMenuCamera.ChangeCameraPosition(0);
         buttonPanel.SetActive(true);
         characterSelectPanel.SetActive(false);
+        aboutPanel.SetActive(false); // here i am deactivating the about panel
 
 
         //if (mainMenuCamera.CanClick)
@@ -70,5 +78,10 @@ public class MenuController : MonoBehaviour
         characterCreatePanel.SetActive(false);
     }
 
+    public void AboutUs()
+    {
+        buttonPanel.SetActive(false);
+        aboutPanel.SetActive(true);
+    }
 
 }
