@@ -14,16 +14,7 @@ public class SceneLoader : MonoBehaviour
         MakeSingleton();
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     void MakeSingleton()
     {
         if(instance!= null)
@@ -47,9 +38,7 @@ public class SceneLoader : MonoBehaviour
     {
         loadingScreen.SetActive(true);
         SceneManager.LoadScene(levelName);
-        
         yield return new WaitForSeconds(2.5f);
-        
         loadingScreen.SetActive(false);
     }
 
